@@ -96,13 +96,6 @@
     -ms-animation-duration: $property;
     -o-animation-duration: $property
 }
-@mixin animation-play-state($property) {
-    animation-play-state: $property;
-    -webkit-animation-play-state: $property;
-    -moz-animation-play-state: $property;
-    -ms-animation-play-state: $property;
-    -o-animation-play-state: $property
-}
 
 @mixin animation-name($property) {
     animation-name: $property;
@@ -118,14 +111,7 @@
     -ms-transition: $property;
     -o-transition: $property;
 }
-@mixin load-from-top{
-    @include transform(translateY(-5rem));
-    @include zero-opacity;
-    @include animation-duration(.8s);
-    @include animation-delay(0s);
-    animation-fill-mode: forwards;
 
-}
 @mixin load-from-bottom{
     @include transform(translateY(5rem));
     @include zero-opacity;
@@ -141,19 +127,7 @@
     animation-fill-mode: forwards;
 
 }
-@mixin play-anim{
-    @include  animation-play-state(running);
-}
-@keyframes loadFromTop {
-    0%{
-        @include transform(translateY(-5rem));
-        @include zero-opacity;
-    }
-    100%{
-        @include transform(translateY(0));
-        @include full-opacity;
-    }
-}
+
 @keyframes loadFromBottom {
     0%{
         @include transform(translateY(5rem));

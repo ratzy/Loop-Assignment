@@ -458,6 +458,7 @@ header{
         opacity: .4;
         padding:.5rem;
         border-bottom: 1px solid transparent;
+        text-transform: capitalize;
         &:hover,&.selected{
             @include full-opacity;
         }
