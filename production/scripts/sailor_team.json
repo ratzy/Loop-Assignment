@@ -1,0 +1,76 @@
+[{
+	"image": "path/to/the/image.jpg",
+	"name": "Crew Member 1",
+	"duties": "Tactic and Trim",
+	"duty_slugs": ["tactic", "trim"]
+}, {
+	"image": "path/to/the/image.jpg",
+	"name": "Crew Member 2",
+	"duties": "Helmsman",
+	"duty_slugs": ["helmsman"]
+}, {
+	"image": "path/to/the/image.jpg",
+	"name": "Crew Member 3",
+	"duties": "Helmsman and Tactic",
+	"duty_slugs": ["helmsman", "tactic"]
+}, {
+	"image": "path/to/the/image.jpg",
+	"name": "Crew Member 4",
+	"duties": "Main Helmsman",
+	"duty_slugs": ["helmsman"]
+}, {
+	"image": "path/to/the/image.jpg",
+	"name": "Crew Member 5",
+	"duties": "Helmsman and Trim",
+	"duty_slugs": ["helmsman", "trim"]
+}, {
+	"image": "path/to/the/image.jpg",
+	"name": "Crew Member 6",
+	"duties": "Trim",
+	"duty_slugs": ["trim"]
+}, {
+	"image": "path/to/the/image.jpg",
+	"name": "Crew Member 7",
+	"duties": "Tactic and Trim",
+	"duty_slugs": ["tactic", "trim"]
+}, {
+	"image": "path/to/the/image.jpg",
+	"name": "Crew Member 8",
+	"duties": "Helmsman and Trim",
+	"duty_slugs": ["helmsman", "trim"]
+}, {
+	"image": "path/to/the/image.jpg",
+	"name": "Crew Member 9",
+	"duties": "Junior Helmsman",
+	"duty_slugs": ["helmsman"]
+}, {
+	"image": "path/to/the/image.jpg",
+	"name": "Crew Member 10",
+	"duties": "Tactic and Trim",
+	"duty_slugs": ["tactic", "trim"]
+}, {
+	"image": "path/to/the/image.jpg",
+	"name": "Crew Member 11",
+	"duties": "Senior Helmsman and Trim",
+	"duty_slugs": ["helmsman", "trim"]
+}, {
+	"image": "path/to/the/image.jpg",
+	"name": "Crew Member 12",
+	"duties": "Tactic",
+	"duty_slugs": ["tactic"]
+}, {
+	"image": "path/to/the/image.jpg",
+	"name": "Crew Member 13",
+	"duties": "Trim",
+	"duty_slugs": ["trim"]
+}, {
+	"image": "path/to/the/image.jpg",
+	"name": "Crew Member 14",
+	"duties": "Tactic and Trim",
+	"duty_slugs": ["tactic", "trim"]
+}, {
+	"image": "path/to/the/image.jpg",
+	"name": "Crew Member 15",
+	"duties": "Tactic",
+	"duty_slugs": ["tactic"]
+}]

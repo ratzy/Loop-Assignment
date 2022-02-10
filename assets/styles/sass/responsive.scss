@@ -1,0 +1,264 @@
+@import 'mixin.scss';
+@media only screen and (min-width: 1600px){
+    .hero-wrapper .hero-content{
+        width: 25vw;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    .site-logo{
+        width: 20vw;
+        padding: 1rem 2rem 1rem 3rem;
+    }
+    .hero-wrapper .hero-content{
+        top:15vw;
+        h1{
+            font-size: $largeFontSize;
+        }
+        .para{
+            font-size: $paraFontSize;
+        }
+    }
+    .about-grid-wrapper h2{
+        font-size: $mediumFontSize2;
+    }
+    .about-grid-wrapper .grid-item{
+        &.boat-sailing-bg{
+          height: 28rem;
+        }
+        &.map-track-bg, &.flag-bg, &.boat-bg{
+            height:14rem;
+        }
+        &:nth-child(8), &:nth-child(9){
+            height: 13rem;
+            h5{
+                font-size: $paraFontSize;
+            }
+        }
+    }
+    .section-tille-wrapper{
+        h2{
+            font-size: $mediumFontSize2;
+        }
+        h4{
+            font-size: $paraFontSize;
+        }
+    }
+    .para-list .para{
+        font-size: $normalFontSize;
+    }
+    .timeline-wrapper .timeline-list{
+        left: 18vw;
+    }
+    .team-wrapper::before{
+        top: -6.5rem;
+    }
+    .timeline-wrapper .timeline-item{
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+    .team-item .tab-content-details h4{
+        font-size: $normalFontSize;
+    }
+   
+}
+
+@media screen and (max-width: 767px){
+    .site-logo{
+        width: 32vw;
+        padding: 1rem 2rem 1rem 3rem;
+    }
+    .hamburger-menu{
+        @include flex-wrapper;
+    }
+    header {
+        @include rel-wrapper;
+        nav{
+           padding-left: 1.25rem;
+        }
+       .nav-list{
+           @include normalTransition;
+            @include abs-wrapper;
+            left: 0;
+            right: 0;
+            top: 4.3rem;
+            background: $actionColor;
+            flex-direction: column;
+            padding: 0 1rem;
+            max-height: 0;
+            overflow: hidden;
+            box-shadow: 0 .3rem 1rem -0.07rem rgba(0,0,0,0);
+       }
+       .nav-item:hover a{
+           color:  $whiteColor;
+       }
+   }
+   .show-menu .nav-list{
+    max-height: 50vh;
+    padding:1rem;
+    box-shadow: 0 .8rem 1rem -0.07rem rgba(0,0,0,.4);
+   }
+   .show-menu::before{
+       content:'';
+       @include abs-wrapper;
+       top:0;
+       left: 0;
+       height: 100%;
+       width: 100%;
+       background-color: rgba(0,0,0,.7);
+       z-index: 5;
+   }
+   
+    .section-tille-wrapper{
+        margin-bottom: 3rem;
+        h2{
+            font-size: $mediumFontSize;
+        }
+        h4{
+            font-size: $normalFontSize;
+        }
+    }
+    .hero-wrapper{
+        border-bottom: 1px solid  $blackColor;
+        padding-bottom: 1rem;
+    }
+    .hero-wrapper .hero-content{
+        @include rel-wrapper;
+        left: auto;
+        right: auto;
+        top: auto;
+        width:90%;
+        padding: 1rem 1.5rem;
+        h1{
+            font-size: $mediumFontSize;
+        }
+        .para{
+            font-size: $normalFontSize;
+        }
+    }
+    .about-grid-wrapper{
+        @include flex-wrapper;
+        @include transform(translateY(0));
+        grid-template-columns: unset;
+        flex-direction: column;
+        margin-top: 1rem;
+        .about-top-padding{
+            padding-top: 0;
+        }
+        h2{
+            font-size: $mediumFontSize;
+        }
+        .grid-item{
+            @include full-width;
+            padding:1.5rem;
+            .para{
+                font-size: $smallFontSize;
+            }
+            &:nth-child(4){
+                grid-column-start: 1;
+                grid-column-end: 4;
+                grid-row-start: unset;
+                grid-row-end: unset;
+            }
+            &.boat-sailing-bg{
+                height: 20rem;
+            }
+            &.boat-bg,&.flag-bg{
+                height: 15rem;
+            }
+            &.map-track-bg{
+                height: 14rem;
+            }
+            &:nth-child(8),&:nth-child(9){
+                height: 8rem;
+                img{
+                    width:1.5rem;
+                }
+                h5{
+                    font-size: $normalFontSize;
+                }
+            }
+        }
+    }
+    .timeline-journey-wrapper {
+        padding: 2rem 1.5rem 0;
+    }
+    .para-list {
+        .para-item{
+            @include flex-wrapper;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .para{
+            font-size: $smallFontSize;
+        }
+   }
+   .timeline-wrapper{
+       margin:0;
+       .timeline-list{
+            bottom: -1.5vw;
+            left: 2vw;
+       }
+       .timeline-item{
+            width: 8vw;
+            height: 8vw;
+            &:nth-child(5){
+                @include transform(translateX(23vw) translateY(-9.5vw));
+                &.selected{
+                    @include transform(translateX(23vw) translateY(-9.5vw) scale(2));
+                }
+            }
+            &:nth-child(6) {
+                @include transform(translateX(35vw) translateY(-16.5vw));
+                &.selected{
+                    @include transform(translateX(35vw) translateY(-16.5vw) scale(2));
+                }
+            }
+       }
+   }
+   .team-wrapper{
+       margin-top: 5rem;
+       &::before{
+       top: -5.5rem;
+    }
+   }
+   .tab-list{
+       gap: 0;
+       .tab-item{
+           padding:.5rem 1rem;
+           font-size: $smallFontSize;
+       }
+   }
+   .team-list{
+     grid-template-columns: repeat(2, 1fr);
+   }
+   .team-item {
+       .tab-content-details{
+            padding: 1.25rem;
+            h4{
+                font-size: $paraFontSize;
+            }
+       }
+       $teamGridSize:2;
+       &:nth-child(5n):hover .tab-content-details{
+        left: 100%;
+       }
+       &:nth-child(#{$teamGridSize}n):hover .tab-content-details{
+        left: -100%;
+       }
+    }
+    footer, footer .nav-list{
+        flex-direction: column;
+        gap:1.5rem;
+        align-items: center;
+        .nav-list{
+            gap:0;
+            .nav-item{
+                padding:.5rem;
+            }
+        }
+    }
+    footer {
+        font-size: $smallFontSize;
+    }
+}

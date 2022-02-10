@@ -1,0 +1,548 @@
+
+    @import 'mixin.scss';
+
+body{
+    @include normal-curning;
+    @include rel-wrapper;
+    font-size: $normalFontSize;
+    font-family: $primaryFont;
+    color: $blackColor;
+    background-color: $bgColor;
+    line-height: 1.45;
+    max-width: $maxWidth;
+    margin:auto;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+body *{
+    box-sizing: border-box;
+}
+a{
+    @include normalTransition;
+    text-decoration: none;
+    color: $blackColor;
+    &:hover{
+        color:$actionColor;
+    }
+}
+.para{
+    font-weight: $thinFontWeight;
+    font-size: $smallFontSize;
+    color: $blackColor;
+}
+.sub-heading{
+    @include uppercaseText;
+    color: $actionColor;
+    
+}
+
+.flex-item{
+    padding:2.5rem;
+}
+.section-tille-wrapper{
+    @include rel-wrapper;
+    text-align: center;
+    margin-bottom: 5rem;
+    h2{
+        @include uppercaseText;
+        margin-bottom: .5rem;
+        font-size: $largeFontSize;
+    }
+    h4{
+        @include uppercaseText; 
+        font-size: $mediumFontSize;
+        margin-bottom: .8rem;
+    }
+    &::after{
+        @include abs-wrapper;
+        content: '';
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 35%;
+        height: 1px;
+        background-color: $blackColor;
+    }
+    &.white-color{
+        h2,h4{
+            color: $whiteColor;
+        }
+        &::after{
+            background-color: $whiteColor;
+        }
+    }
+}
+
+.btn{
+     @include normalTransition;
+    @include block-element;
+    @include uppercaseText;
+    @include pointedCursor;
+    padding: 1rem 2rem;
+    color:$whiteColor;
+    border: 1px solid $whiteColor;
+    margin: 1.5rem auto;
+    background-color: transparent;
+    &:hover{
+        background-color: $whiteColor;
+        color: $blackColor;
+    }
+    &.disabled{
+        opacity: .5;
+        pointer-events: none;
+    }
+}
+// SATRT: Header
+header{
+    @include flex-wrapper;
+    background-color:$whiteColor;
+    justify-content: space-between;
+    z-index: 10;
+    align-items: center;
+    nav{
+        @include fade-in;
+        animation-name:fadeIn;
+        animation-delay: .15s;
+        padding-left: 2.25rem;
+    }
+    .nav-list{
+        @include flex-wrapper;
+        align-items: center;
+    }
+    .nav-item{
+        @include uppercaseText;
+        @include pointedCursor;
+        @include rel-wrapper;
+        color: $blackColor;
+        padding: 1rem 1.25rem;
+        border-bottom: 2px solid transparent;
+        &::before{
+            @include normalTransition;
+            @include abs-wrapper;
+            content:'';
+            left: 0;
+            bottom: 0;
+            height: .3rem;
+            width: 0;
+            background-color: $actionColor;
+        }
+        &:hover::before, &.selected::before{
+            width: 100%;
+        }
+        a{
+            font-size: $smallFontSize;
+            color:  $blackColor;
+        }
+    }
+}
+.hamburger-menu{
+    @include hide;
+    flex-direction: column;
+    width: 1.5rem;
+    height: 1.5rem;
+    gap: .35rem;
+    span{
+         @include normalTransition;
+        @include block-element;
+        width: 100%;
+        height: 2px;
+        background-color: $blackColor;
+        &:nth-child(2){
+            width: 75%;
+        }
+    }
+}
+.shown-menu .hamburger-menu spa{
+    background-color: $actionColor;
+}
+.site-logo{
+    @include pointedCursor;
+    box-sizing: border-box;
+    width: 15vw;
+    padding: 1rem 2rem 1rem 4rem;
+    background-color: $actionColor;
+}
+// END: Header
+
+// START: Hero
+.hero-wrapper{
+    @include rel-wrapper;
+    width: 100%;
+    z-index: 2;
+    img{
+        @include block-element;
+        @include full-width;
+    }
+    .hero-content{
+        @include abs-wrapper;
+        right: 5vw;
+        top: 10vw;
+        text-align: left;
+        width: 35vw;
+        h1{
+            font-size: $extraLargeFontSize;
+            font-weight: $boldFontWeight;
+            color: $actionColor;
+            line-height: 1.1;
+            em, span{
+                @include block-element;
+            }
+            span{
+                overflow: hidden;
+            }
+            em{
+                @include load-from-bottom;
+                animation-name:loadFromBottom;
+            }
+            span:nth-child(2) em{
+                animation-delay: .15s;
+            }
+        }
+        .para{
+            margin-top: 1rem;
+            overflow: hidden;
+            font-size: $mediumFontSize;
+            em{
+                @include block-element; 
+                @include load-from-bottom;
+                animation-delay: .35s;
+                animation-name:loadFromBottom;
+            }
+        }
+    }
+}
+// END: Hero
+
+// START: About
+.about-grid-wrapper{
+    @include transform(translateY(-5rem));
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+    .calendar-icon{
+        @include inline-element;
+        filter: brightness(0.4) invert(1);
+        padding-right: .5rem;
+
+    }
+    .grid-item{
+        @include flex-wrapper;
+        flex-direction: column;
+        justify-content: flex-end;
+        box-sizing: border-box;
+        padding: 2.5rem;
+        .para{
+            font-size: $normalFontSize;
+            width: 85%;
+        }
+        &.dark-bg .para{
+                color: $bgColor;
+        }
+    }
+    .about-top-padding{
+        padding-top: 9rem;
+    }
+    h3{
+        font-weight: bold;
+        margin: .5rem 0;
+    }
+    h2{
+        font-weight: bold;
+        font-size: $largeFontSize;
+    }
+    h4{
+        @include uppercaseText;
+        font-weight: bold;
+        margin-bottom: .5rem;
+    }
+    .grid-item{
+        &.map-bg{
+            @include bgImgFit;
+            background-image: url('../images/map.jpg');
+            background-position: 0 -70%;
+        }
+        &.boat-sailing-bg{
+            @include bgImgFit;
+            background-image: url('../images/boat-sailing.jpg');
+            height: 40rem;
+        }
+        &.map-track-bg{
+            @include bgImgFit;
+            background-image: url('../images/map-track.jpg');
+            background-position: center;
+            height: 20rem;
+        }
+        &.flag-bg{
+            @include bgImgFit;
+            background-image: url('../images/flag.jpg');
+            height: 20rem;
+        }
+        &.boat-bg{
+            @include bgImgFit;
+            background-image: url('../images/boat.jpg');
+            height: 20rem;
+        }
+        &.boats-bg{
+            @include bgImgFit;
+            background-image: url('../images/boats.jpg');
+        }
+        &.dark-bg{
+            background-color: $blackColor;
+        }
+        &:nth-child(3), &:nth-child(5){
+            grid-column-start: 3;
+            grid-column-end: 5;
+        }
+        &:nth-child(4){
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+        &:nth-child(8), &:nth-child(9){
+            align-items: center;
+            justify-content: center;
+            grid-column: span 2;
+            height: 16rem;
+            img{
+                @include block-element;
+                margin-bottom: .8rem;
+                width: 2rem;
+            }
+            h5{
+                @include uppercaseText;
+                font-size: $mediumFontSize;
+                color: $whiteColor;
+                line-height: 1.2;
+            }
+        }
+    }
+}
+//END: About
+
+//START:Timeline Journey
+.timeline-journey-wrapper{
+    padding: 0 10% 0;
+}
+.para-list{
+    @include rel-wrapper;
+    .para-item{
+        display: grid;
+         grid-template-columns: 1fr 1fr;
+     gap: 2.5rem;
+    }
+    .para-wrapper{
+        @include flex-wrapper;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .para{
+        color: $paraColor;
+        font-size: $paraFontSize;
+    }
+    .para-item{
+        @include abs-wrapper;
+        @include normalTransition;
+        @include transform(translateY(2rem));
+        @include zero-opacity;
+        top:0;
+        left: 0;
+        &.selected{
+            @include rel-wrapper;
+            @include transform(translateY(0));
+            @include full-opacity;
+        }
+    }
+    
+}
+.timeline-wrapper{
+    @include rel-wrapper;
+    margin:0 -10%;
+    .timeline-track-img{
+        @include block-element;
+        @include full-width;
+    }
+    .timeline-list{
+        @include abs-wrapper;
+        @include flex-wrapper;
+        bottom: 4vw;
+        left: 17rem;
+    }
+    .timeline-item{
+        @include normalTransition;
+        @include bgImgFit;
+        @include pointedCursor;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+        background-image: url('../images/check-point.png');
+        &.selected{
+            background-image: url('../images/check-point-selected.png');
+            filter: none !important;
+        }
+        &:hover{
+            filter: brightness(.8) invert(1);
+        }
+        &:first-child.selected{
+            @include transform(scale(2));
+        }
+        &:nth-child(2){
+            @include transform(translateX(7vw) translateY(-1.5vw));
+            &.selected{
+                @include transform(translateX(7vw) translateY(-1.5vw) scale(2));
+                
+            }
+        }
+        &:nth-child(3){
+            @include transform(translateX(10vw) translateY(-3.5vw));
+            &.selected{
+                @include transform(translateX(10vw) translateY(-3.5vw)scale(2));
+            }
+        }
+        &:nth-child(4){
+            @include transform(translateX(14vw) translateY(-4.5vw));
+            &.selected{
+                @include transform(translateX(14vw) translateY(-4.5vw)scale(2));
+            }
+        }
+        &:nth-child(5){
+            @include transform(translateX(20vw) translateY(-5vw));
+            &.selected{
+                @include transform(translateX(20vw) translateY(-5vw) scale(2));
+            }
+        }
+        &:nth-child(5){
+            @include transform(translateX(23vw) translateY(-5.5vw));
+            &.selected{
+            @include transform(translateX(23vw) translateY(-5.5vw) scale(2));
+            }
+        }
+        &:nth-child(6){
+            @include transform(translateX(35vw) translateY(-9.5vw));
+            &.selected{
+                @include transform(translateX(35vw) translateY(-9.5vw) scale(2));
+            }
+        }
+    }
+}
+//END: Timeline Journey
+
+//START: Team
+.team-wrapper{
+    @include rel-wrapper;
+    background-color: $blackColor;
+    padding: 0 0 3rem;
+    margin-top:3rem;
+    &::before{
+        @include transform(skew(0deg, -10deg));
+        @include abs-wrapper;
+        content:'';
+        top:-10rem;
+        left: 0;
+        right: 0;
+        background-color: $blackColor;
+        height: 100%;
+        z-index: -1;;
+    }
+}
+.tab-list{
+    @include flex-wrapper;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+    margin-bottom: 1rem;
+    .tab-item{
+        @include normalTransition;
+        @include pointedCursor;
+        color: $whiteColor;
+        opacity: .4;
+        padding:.5rem;
+        border-bottom: 1px solid transparent;
+        &:hover,&.selected{
+            @include full-opacity;
+        }
+        &.selected{
+            border-bottom-color: $whiteColor;
+        }
+    }
+}
+$teamGridSize: 5;
+.team-list{
+    display: grid;
+    grid-template-columns: repeat($teamGridSize, 1fr);
+    margin-bottom: 3rem;
+}
+.team-item{
+    @include rel-wrapper;
+    @include flex-wrapper;
+    @include pointedCursor;
+    &::before{
+        @include normalTransition;
+        @include abs-wrapper;
+        content: '';
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,.5);
+    }
+    .tab-content-details{
+        @include normalTransition;
+        @include abs-wrapper;
+        @include flex-wrapper;
+        @include zero-opacity;
+        flex-direction: column;
+        padding: 2rem;
+        justify-content: flex-end;
+        background-color: $bgColor;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        h4{
+            @include uppercaseText;
+            margin-bottom: .3rem;
+            font-size: $mediumFontSize;
+        }
+        p{
+            font-size: $normalFontSize;
+        }
+    }
+    &:hover {
+        &::before{
+            background-color: rgba(0,0,0,0);
+        }
+        .tab-content-details{
+            @include full-opacity;
+            left: 100%;
+            z-index: 1;
+        }
+    }
+    &:nth-child(#{$teamGridSize}n):hover .tab-content-details{
+       left: -100%;
+    }
+}
+//END: Team
+
+// START: Footer
+footer{
+    @include flex-wrapper;
+    justify-content: space-between;
+    padding: 3rem 3%;
+    .social-media-list, .nav-list{
+        @include flex-wrapper;
+        gap:1.25rem;
+    }
+    .social-media-item img{
+        @include normalTransition;
+        @include block-element;
+        width: 2rem;
+        &:hover{
+            @include transform(scale(1.1));
+        }
+    }
+}
+// END: Footer
+
+
+@import 'responsive.scss';

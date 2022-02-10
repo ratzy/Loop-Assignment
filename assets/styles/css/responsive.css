@@ -1,0 +1,335 @@
+@keyframes loadFromTop {
+  0% {
+    transform: translateY(-5rem);
+    -webkit-transform: translateY(-5rem);
+    -moz-transform: translateY(-5rem);
+    -ms-transform: translateY(-5rem);
+    -o-transform: translateY(-5rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes loadFromBottom {
+  0% {
+    transform: translateY(5rem);
+    -webkit-transform: translateY(5rem);
+    -moz-transform: translateY(5rem);
+    -ms-transform: translateY(5rem);
+    -o-transform: translateY(5rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.dark-bg {
+  background-color: #000000;
+}
+
+.hide {
+  display: none;
+}
+
+@media only screen and (min-width: 1600px) {
+  .hero-wrapper .hero-content {
+    width: 25vw;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .site-logo {
+    width: 20vw;
+    padding: 1rem 2rem 1rem 3rem;
+  }
+  .hero-wrapper .hero-content {
+    top: 15vw;
+  }
+  .hero-wrapper .hero-content h1 {
+    font-size: 3rem;
+  }
+  .hero-wrapper .hero-content .para {
+    font-size: 1.25rem;
+  }
+  .about-grid-wrapper h2 {
+    font-size: 2.25rem;
+  }
+  .about-grid-wrapper .grid-item.boat-sailing-bg {
+    height: 28rem;
+  }
+  .about-grid-wrapper .grid-item.map-track-bg, .about-grid-wrapper .grid-item.flag-bg, .about-grid-wrapper .grid-item.boat-bg {
+    height: 14rem;
+  }
+  .about-grid-wrapper .grid-item:nth-child(8), .about-grid-wrapper .grid-item:nth-child(9) {
+    height: 13rem;
+  }
+  .about-grid-wrapper .grid-item:nth-child(8) h5, .about-grid-wrapper .grid-item:nth-child(9) h5 {
+    font-size: 1.25rem;
+  }
+  .section-tille-wrapper h2 {
+    font-size: 2.25rem;
+  }
+  .section-tille-wrapper h4 {
+    font-size: 1.25rem;
+  }
+  .para-list .para {
+    font-size: 1rem;
+  }
+  .timeline-wrapper .timeline-list {
+    left: 18vw;
+  }
+  .team-wrapper::before {
+    top: -6.5rem;
+  }
+  .timeline-wrapper .timeline-item {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+  .team-item .tab-content-details h4 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .site-logo {
+    width: 32vw;
+    padding: 1rem 2rem 1rem 3rem;
+  }
+  .hamburger-menu {
+    display: flex;
+  }
+  header {
+    position: relative;
+  }
+  header nav {
+    padding-left: 1.25rem;
+  }
+  header .nav-list {
+    transition: all .55s;
+    -webkit-transition: all .55s;
+    -moz-transition: all .55s;
+    -ms-transition: all .55s;
+    -o-transition: all .55s;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 4.3rem;
+    background: #c4132f;
+    flex-direction: column;
+    padding: 0 1rem;
+    max-height: 0;
+    overflow: hidden;
+    box-shadow: 0 0.3rem 1rem -0.07rem rgba(0, 0, 0, 0);
+  }
+  header .nav-item:hover a {
+    color: #ffffff;
+  }
+  .show-menu .nav-list {
+    max-height: 50vh;
+    padding: 1rem;
+    box-shadow: 0 0.8rem 1rem -0.07rem rgba(0, 0, 0, 0.4);
+  }
+  .show-menu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 5;
+  }
+  .section-tille-wrapper {
+    margin-bottom: 3rem;
+  }
+  .section-tille-wrapper h2 {
+    font-size: 1.5rem;
+  }
+  .section-tille-wrapper h4 {
+    font-size: 1rem;
+  }
+  .hero-wrapper {
+    border-bottom: 1px solid #000000;
+    padding-bottom: 1rem;
+  }
+  .hero-wrapper .hero-content {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    width: 90%;
+    padding: 1rem 1.5rem;
+  }
+  .hero-wrapper .hero-content h1 {
+    font-size: 1.5rem;
+  }
+  .hero-wrapper .hero-content .para {
+    font-size: 1rem;
+  }
+  .about-grid-wrapper {
+    display: flex;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    grid-template-columns: unset;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+  .about-grid-wrapper .about-top-padding {
+    padding-top: 0;
+  }
+  .about-grid-wrapper h2 {
+    font-size: 1.5rem;
+  }
+  .about-grid-wrapper .grid-item {
+    width: 100%;
+    padding: 1.5rem;
+  }
+  .about-grid-wrapper .grid-item .para {
+    font-size: 0.85rem;
+  }
+  .about-grid-wrapper .grid-item:nth-child(4) {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: unset;
+    grid-row-end: unset;
+  }
+  .about-grid-wrapper .grid-item.boat-sailing-bg {
+    height: 20rem;
+  }
+  .about-grid-wrapper .grid-item.boat-bg, .about-grid-wrapper .grid-item.flag-bg {
+    height: 15rem;
+  }
+  .about-grid-wrapper .grid-item.map-track-bg {
+    height: 14rem;
+  }
+  .about-grid-wrapper .grid-item:nth-child(8), .about-grid-wrapper .grid-item:nth-child(9) {
+    height: 8rem;
+  }
+  .about-grid-wrapper .grid-item:nth-child(8) img, .about-grid-wrapper .grid-item:nth-child(9) img {
+    width: 1.5rem;
+  }
+  .about-grid-wrapper .grid-item:nth-child(8) h5, .about-grid-wrapper .grid-item:nth-child(9) h5 {
+    font-size: 1rem;
+  }
+  .timeline-journey-wrapper {
+    padding: 2rem 1.5rem 0;
+  }
+  .para-list .para-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .para-list .para {
+    font-size: 0.85rem;
+  }
+  .timeline-wrapper {
+    margin: 0;
+  }
+  .timeline-wrapper .timeline-list {
+    bottom: -1.5vw;
+    left: 2vw;
+  }
+  .timeline-wrapper .timeline-item {
+    width: 8vw;
+    height: 8vw;
+  }
+  .timeline-wrapper .timeline-item:nth-child(5) {
+    transform: translateX(23vw) translateY(-9.5vw);
+    -webkit-transform: translateX(23vw) translateY(-9.5vw);
+    -moz-transform: translateX(23vw) translateY(-9.5vw);
+    -ms-transform: translateX(23vw) translateY(-9.5vw);
+    -o-transform: translateX(23vw) translateY(-9.5vw);
+  }
+  .timeline-wrapper .timeline-item:nth-child(5).selected {
+    transform: translateX(23vw) translateY(-9.5vw) scale(2);
+    -webkit-transform: translateX(23vw) translateY(-9.5vw) scale(2);
+    -moz-transform: translateX(23vw) translateY(-9.5vw) scale(2);
+    -ms-transform: translateX(23vw) translateY(-9.5vw) scale(2);
+    -o-transform: translateX(23vw) translateY(-9.5vw) scale(2);
+  }
+  .timeline-wrapper .timeline-item:nth-child(6) {
+    transform: translateX(35vw) translateY(-16.5vw);
+    -webkit-transform: translateX(35vw) translateY(-16.5vw);
+    -moz-transform: translateX(35vw) translateY(-16.5vw);
+    -ms-transform: translateX(35vw) translateY(-16.5vw);
+    -o-transform: translateX(35vw) translateY(-16.5vw);
+  }
+  .timeline-wrapper .timeline-item:nth-child(6).selected {
+    transform: translateX(35vw) translateY(-16.5vw) scale(2);
+    -webkit-transform: translateX(35vw) translateY(-16.5vw) scale(2);
+    -moz-transform: translateX(35vw) translateY(-16.5vw) scale(2);
+    -ms-transform: translateX(35vw) translateY(-16.5vw) scale(2);
+    -o-transform: translateX(35vw) translateY(-16.5vw) scale(2);
+  }
+  .team-wrapper {
+    margin-top: 5rem;
+  }
+  .team-wrapper::before {
+    top: -5.5rem;
+  }
+  .tab-list {
+    gap: 0;
+  }
+  .tab-list .tab-item {
+    padding: .5rem 1rem;
+    font-size: 0.85rem;
+  }
+  .team-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .team-item .tab-content-details {
+    padding: 1.25rem;
+  }
+  .team-item .tab-content-details h4 {
+    font-size: 1.25rem;
+  }
+  .team-item:nth-child(5n):hover .tab-content-details {
+    left: 100%;
+  }
+  .team-item:nth-child(2n):hover .tab-content-details {
+    left: -100%;
+  }
+  footer, footer .nav-list {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  footer .nav-list, footer .nav-list .nav-list {
+    gap: 0;
+  }
+  footer .nav-list .nav-item, footer .nav-list .nav-list .nav-item {
+    padding: .5rem;
+  }
+  footer {
+    font-size: 0.85rem;
+  }
+}

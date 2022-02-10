@@ -1,0 +1,186 @@
+@import 'variable.scss';
+
+@mixin normal-curning{
+    letter-spacing: -0.05rem;
+}
+@mixin tight-curning{
+    letter-spacing: -0.3rem;
+}
+@mixin rel-wrapper{
+    position: relative;
+}
+@mixin fix-wrapper{
+    position: fixed;
+}
+@mixin abs-wrapper{
+    position: absolute;
+}
+@mixin vertical-align-middle {
+    @include abs-wrapper;
+    top: 50%;
+    @include transform(translateY(-50%));
+}
+@mixin full-viwport {
+    height: 100vh;
+    width: 100vw;
+}
+@mixin block-element {
+    display: block;
+}
+@mixin inline-element {
+    display: inline-block;
+}
+@mixin flex-wrapper {
+    display: flex;
+}
+@mixin zero-opacity{
+    opacity: 0;
+}
+@mixin full-opacity{
+    opacity: 1;
+}
+@mixin full-height {
+    height: 100%;
+}
+@mixin full-width {
+    width: 100%;
+}
+@mixin hide{
+    display: none;
+}
+@mixin uppercaseText {
+    text-transform: uppercase;
+}
+@mixin pointedCursor{
+    cursor: pointer;
+}
+
+@mixin normalTransition{
+    transition: all .55s;
+    -webkit-transition: all .55s;
+    -moz-transition: all .55s;
+    -ms-transition: all .55s;
+    -o-transition: all .55s;
+}
+@mixin transform($property) {
+    transform: $property;
+    -webkit-transform: $property;
+    -moz-transform: $property;
+    -ms-transform: $property;
+    -o-transform: $property;
+}
+@mixin bgImgFit{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+// START: Animation
+@mixin transition-timing{
+    transition-timing-function: cubic-bezier(0, 0.49, 0.68, 0.81);;
+    -webkit-transition-timing-function: cubic-bezier(0, 0.49, 0.68, 0.81);;
+    -moz-transition-timing-function: cubic-bezier(0, 0.49, 0.68, 0.81);;
+    -ms-transition-timing-function: cubic-bezier(0, 0.49, 0.68, 0.81);;
+    -o-transition-timing-function: cubic-bezier(0, 0.49, 0.68, 0.81);;
+}
+@mixin animation-delay($property) {
+    animation-delay: $property;
+    -webkit-animation-delay: $property;
+    -moz-animation-delay: $property;
+    -ms-animation-delay: $property;
+    -o-animation-delay: $property
+}
+@mixin animation-duration($property) {
+    animation-duration: $property;
+    -webkit-animation-duration: $property;
+    -moz-animation-duration: $property;
+    -ms-animation-duration: $property;
+    -o-animation-duration: $property
+}
+@mixin animation-play-state($property) {
+    animation-play-state: $property;
+    -webkit-animation-play-state: $property;
+    -moz-animation-play-state: $property;
+    -ms-animation-play-state: $property;
+    -o-animation-play-state: $property
+}
+
+@mixin animation-name($property) {
+    animation-name: $property;
+    -webkit-animation-name: $property;
+    -moz-animation-name: $property;
+    -ms-animation-name: $property;
+    -o-animation-name: $property
+}
+@mixin transition($property) {
+    transition: $property;
+    -webkit-transition: $property;
+    -moz-transition: $property;
+    -ms-transition: $property;
+    -o-transition: $property;
+}
+@mixin load-from-top{
+    @include transform(translateY(-5rem));
+    @include zero-opacity;
+    @include animation-duration(.8s);
+    @include animation-delay(0s);
+    animation-fill-mode: forwards;
+
+}
+@mixin load-from-bottom{
+    @include transform(translateY(5rem));
+    @include zero-opacity;
+    @include animation-duration(.8s);
+    @include animation-delay(0s);
+    animation-fill-mode: forwards;
+
+}
+@mixin fade-in{
+    @include zero-opacity;
+    @include animation-duration(.8s);
+    @include animation-delay(0s);
+    animation-fill-mode: forwards;
+
+}
+@mixin play-anim{
+    @include  animation-play-state(running);
+}
+@keyframes loadFromTop {
+    0%{
+        @include transform(translateY(-5rem));
+        @include zero-opacity;
+    }
+    100%{
+        @include transform(translateY(0));
+        @include full-opacity;
+    }
+}
+@keyframes loadFromBottom {
+    0%{
+        @include transform(translateY(5rem));
+        @include zero-opacity;
+    }
+    100%{
+        @include transform(translateY(0));
+        @include full-opacity;
+    }
+}
+
+@keyframes fadeIn {
+    0%{
+        @include zero-opacity;
+    }
+    100%{
+        @include full-opacity;
+    }
+}
+// END: Animation
+
+.full-width{
+    width: 100%;
+}
+.dark-bg{
+    background-color: $blackColor;
+}
+.hide{
+    @include hide;
+}
